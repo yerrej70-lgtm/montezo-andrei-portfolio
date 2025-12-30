@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andrei Montezo | IT Student Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Poppins', sans-serif; line-height: 1.6; transition: all 0.3s ease; overflow-x: hidden; }
+        .light-mode { --bg-color: #f8f9fa; --text-color: #333; --primary: #4361ee; --secondary: #3a0ca3; --accent: #7209b7; --card-bg: #fff; --shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .dark-mode { --bg-color: #121212; --text-color: #f8f9fa; --primary: #4cc9f0; --secondary: #4361ee; --accent: #7209b7; --card-bg: #1e1e1e; --shadow: 0 5px 15px rgba(0,0,0,0.3); }
+        body { background: var(--bg-color); color: var(--text-color); }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .section { padding: 80px 0; }
+        h1 { font-size: 3rem; }
+        h2 { font-size: 2rem; color: var(--primary); margin: 20px 0; }
+        .btn { background: var(--primary); color: white; padding: 12px 30px; border-radius: 30px; text-decoration: none; display: inline-block; margin: 10px 5px; }
+        nav { position: fixed; top: 0; width: 100%; background: var(--card-bg); padding: 15px; z-index: 1000; box-shadow: var(--shadow); }
+        .nav-container { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; }
+        .logo a { font-size: 1.8rem; font-weight: bold; color: var(--primary); text-decoration: none; }
+        .nav-menu { display: flex; list-style: none; gap: 20px; }
+        .nav-menu a { text-decoration: none; color: var(--text-color); }
+        .theme-toggle { cursor: pointer; font-size: 1.3rem; }
+        #home { padding-top: 120px; min-height: 100vh; display: flex; align-items: center; }
+        .home-content { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+        .profile-photo { width: 300px; height: 300px; border-radius: 50%; border: 5px solid var(--primary); object-fit: cover; }
+        .about-content, .skills-grid, .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
+        .about-card, .skill-category, .project-card, .contact-info, .contact-form { background: var(--card-bg); padding: 25px; border-radius: 15px; box-shadow: var(--shadow); }
+        .skill-tag { background: var(--primary); color: white; padding: 8px 15px; border-radius: 20px; display: inline-block; margin: 5px; }
+        .contact-content { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+        footer { text-align: center; padding: 30px; background: var(--card-bg); margin-top: 50px; }
+        @media (max-width: 768px) {
+            .home-content, .contact-content { grid-template-columns: 1fr; text-align: center; }
+            .nav-menu { display: none; }
+            .hamburger { display: block; }
+            h1 { font-size: 2.2rem; }
+            .profile-photo { width: 250px; height: 250px; }
+        }
+    </style>
+</head>
+<body class="light-mode">
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="logo"><a href="#home">AM</a></div>
+            <ul class="nav-menu">
+                <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
+                <li><a href="#skills"><i class="fas fa-code"></i> Skills</a></li>
+                <li><a href="#projects"><i class="fas fa-project-diagram"></i> Projects</a></li>
+                <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+            <div class="theme-toggle" id="themeToggle"><i class="fas fa-moon"></i></div>
+            <div class="hamburger"><span></span><span></span><span></span></div>
+        </div>
+    </nav>
+
+    <!-- Home -->
+    <section id="home" class="section">
+        <div class="container">
+            <div class="home-content">
+                <div class="home-text">
+                    <h1>Hi, I'm <span style="color: var(--primary)">Andrei Montezo</span></h1>
+                    <h2>IT Student</h2>
+                    <p style="font-style: italic; margin: 20px 0; color: var(--accent);">"Good programmers write code that humans can understand." — Anonymous</p>
+                    <p>I'm a happy person of Ormoc City.</p>
+                    <a href="#projects" class="btn">View My Projects</a>
+                    <a href="#contact" class="btn" style="background: transparent; border: 2px solid var(--primary); color: var(--primary);">Contact Me</a>
+                </div>
+                <div class="home-image">
+                    <img src="profile.jpg" alt="Andrei Montezo" class="profile-photo">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-card">
+                    <i class="fas fa-graduation-cap" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 15px;"></i>
+                    <h3>Education</h3>
+                    <p>Eastern Visayas State University - Ormoc Campus</p>
+                    <p>BS in Information Technology</p>
+                    <p>Expected Graduation: 2025</p>
+                </div>
+                <div class="about-card">
+                    <i class="fas fa-laptop-code" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 15px;"></i>
+                    <h3>Interests</h3>
+                    <p>Play video games</p>
+                    <p>Browse social media</p>
+                </div>
+                <div class="about-card">
+                    <i class="fas fa-heart" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 15px;"></i>
+                    <h3>Hobbies</h3>
+                    <p>Doing art and crafts</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="section">
+        <div class="container">
+            <h2 class="section-title">My Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3><i class="fas fa-code"></i> Programming</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">C</span>
+                        <span class="skill-tag">Python</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-tools"></i> Tools</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">VSC</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-users"></i> Soft Skills</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">Teamwork</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-layer-group"></i> Technical Areas</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">Web Development</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title">My Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="code.png" alt="Portfolio Website Screenshot" style="width:100%; height:200px; object-fit:cover; border-radius:15px;">
+                    <div class="project-info">
+                        <h3>Insertion</h3>
+                        <p>Inserting an element.</p>
+                        <p><strong>My Role:</strong> Code fixer</p>
+                        <div class="project-tech">
+                            <span style="background: var(--accent); color: white; padding: 5px 10px; border-radius: 10px; margin: 5px; display: inline-block;">C</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+<section id="contact" class="section">
+    <div class="container">
+        <h2 class="section-title">Contact Me</h2>
+        <div class="contact-content">
+            <div class="contact-info">
+                <h3><i class="fas fa-address-card"></i> Get In Touch</h3>
+                <p><i class="fas fa-envelope"></i> yerrej70@gmail.com</p>
+                <div class="social-links" style="display: flex; gap: 15px; margin-top: 20px;">
+                    <a href="https://github.com" style="background: var(--primary); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none;"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com" style="background: var(--primary); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none;"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <form class="contact-form" id="contactForm">
+                <input type="text" placeholder="Your Name" required style="width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ddd; border-radius: 5px;">
+                <input type="email" placeholder="Your Email" required style="width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ddd; border-radius: 5px;">
+                <textarea placeholder="Your Message" rows="4" required style="width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ddd; border-radius: 5px;"></textarea>
+                <button type="submit" class="btn" style="width: 100%;"><i class="fas fa-paper-plane"></i> Send Message</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Montezo, Andrei. All Rights Reserved.</p>
+        <p>Final Project - Web Development Portfolio</p>
+    </footer>
+
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = themeToggle.querySelector('i');
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        if (savedTheme === 'dark') {
+            document.body.classList.remove('light-mode');
+            document.body.classList.add('dark-mode');
+            themeIcon.classList.remove('fa-moon');
+            themeIcon.classList.add('fa-sun');
+        }
+        themeToggle.addEventListener('click', () => {
+            if (document.body.classList.contains('light-mode')) {
+                document.body.classList.remove('light-mode');
+                document.body.classList.add('dark-mode');
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                document.body.classList.remove('dark-mode');
+                document.body.classList.add('light-mode');
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! I will get back to you soon.');
+            this.reset();
+        });
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+        hamburger.addEventListener('click', () => {
+            navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
+        });
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                navMenu.style.display = 'flex';
+            } else {
+                navMenu.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
